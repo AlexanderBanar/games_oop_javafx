@@ -95,7 +95,7 @@ public class Logic {
         boolean result = false;
         int[] diagonal = extractDiagonal(table);
         for (int i = 0; i < diagonal.length; i++) {
-            if (diagonal[i] == 'X') {
+            if (diagonal[i] == 1) {
                 if (monoHorizontal(table, i) || monoVertical(table, i)) {
                     result = true;
                     break;

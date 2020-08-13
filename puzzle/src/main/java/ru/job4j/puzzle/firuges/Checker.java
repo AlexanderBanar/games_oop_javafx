@@ -13,13 +13,8 @@ public class Checker implements Figure {
     }
 
     @Override
-    public Cell[] way(Cell dest) {
-        Cell[] steps = new Cell[0];
-        if ((Math.abs(source.getX() - dest.getX())
-                + Math.abs(source.getY() - dest.getY())) == 1) {
-            steps = new Cell[]{dest};
-        }
-        return steps;
+    public Cell[] way(Cell source, Cell dest) {
+        return new Cell[0];
     }
 
     @Override

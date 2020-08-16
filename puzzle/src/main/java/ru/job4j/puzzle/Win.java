@@ -3,12 +3,11 @@ package ru.job4j.puzzle;
 public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = true;
-        int[][] table = Logic.convert();
         boolean result = false;
-        int[] diagonal = extractDiagonal(table);
+        int[] diagonal = extractDiagonal(board);
         for (int i = 0; i < diagonal.length; i++) {
             if (diagonal[i] == 1) {
-                if (monoHorizontal(table, i) || monoVertical(table, i)) {
+                if (monoHorizontal(board, i) || monoVertical(board, i)) {
                     result = true;
                     break;
                 }

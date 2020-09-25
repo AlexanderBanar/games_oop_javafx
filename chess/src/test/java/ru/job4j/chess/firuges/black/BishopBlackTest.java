@@ -1,6 +1,7 @@
 package ru.job4j.chess.firuges.black;
 
 import org.junit.Test;
+import ru.job4j.chess.ImpossibleMoveException;
 import ru.job4j.chess.firuges.Cell;
 
 import static org.junit.Assert.assertThat;
@@ -20,13 +21,13 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void way() {
+    public void way() throws ImpossibleMoveException {
         BishopBlack bishop = new BishopBlack(Cell.C1);
         assertThat(bishop.way(Cell.G5), is(new Cell[] {Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void wayWrong() {
+    @Test(expected = ImpossibleMoveException.class)
+    public void wayWrong() throws ImpossibleMoveException {
         BishopBlack bishop = new BishopBlack(Cell.C1);
         bishop.way(Cell.H1);
     }
